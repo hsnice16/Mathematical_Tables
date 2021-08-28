@@ -1,0 +1,29 @@
+:root {
+  --gray-700: #374151;
+}
+
+#container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#container table {
+  margin: 1rem auto;
+}
+
+table,
+tbody,
+tr,
+th,
+td {
+  border-collapse: collapse;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-700);
+}
+
+th,
+td {
+  padding: 0.2rem;
+}
