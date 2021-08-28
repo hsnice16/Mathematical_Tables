@@ -21,7 +21,6 @@ const tdColors = [
   "#FFFBEB",
   "#FFF7ED",
 ];
-const divElement = document.createElement("div");
 
 function createTableElement(tableOf) {
   const tableElement = document.createElement("table");
@@ -32,6 +31,7 @@ function createTableElement(tableOf) {
   // Styling
   tableElement.style.fontSize = `${12 + tableOf}px`;
   tableHeaderCell.style.backgroundColor = thColors[tableOf - 2];
+  //
 
   const tableHeaderCellTextNode = document.createTextNode(
     `Table of ${tableOf}`
@@ -45,6 +45,7 @@ function createTableElement(tableOf) {
 
     // Styling
     tableDataCell.style.backgroundColor = tdColors[tableOf - 2];
+    //
 
     tableDataCell.appendChild(tableDataCellTextNode);
     tableRow.appendChild(tableDataCell);
@@ -56,14 +57,12 @@ function createTableElement(tableOf) {
   return tableElement;
 }
 
-function createDivElement(tableOf) {
-  divElement.appendChild(createTableElement(tableOf));
-
-  document.querySelector("#container").appendChild(divElement);
+function appendInContainerTableOf(tableOf) {
+  document.querySelector("#container").appendChild(createTableElement(tableOf));
 }
 
 var intervalId = setInterval(() => {
-  createDivElement(tableOf);
+  appendInContainerTableOf(tableOf);
   tableOf += 1;
 
   if (tableOf === 11) {
